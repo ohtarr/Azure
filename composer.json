@@ -1,0 +1,20 @@
+{
+    "name": "ohtarr/azure",
+    "description": "Microsoft Azure Oauth2 / Graph API",
+    "license": "LGPL-3.0-or-later",
+    "require": {
+        "guzzlehttp/guzzle": "^7.0.1",
+        "firebase/php-jwt": "^5.2"
+    },
+    "authors": [
+        {
+            "name": "ohtarr",
+            "email": "ohtarr@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Ohtarr\\Azure\\": "src/Azure"
+        }
+    }
+}
