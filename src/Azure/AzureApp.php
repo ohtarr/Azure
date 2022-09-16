@@ -38,11 +38,10 @@ class AzureApp extends Azure
             ]
         ];
         $response = $this->guzzle($guzzleparams);
-
         return $response['access_token'];
     }
 
-    public function getUserById($id, $token = null)
+ /*    public function getUserById($id, $token = null)
     {
         if(!$token)
         {
@@ -60,22 +59,10 @@ class AzureApp extends Azure
         ];
         $response = $this->guzzle($guzzleparams);
 
-        /* $verb = "get";
-        $url = "https://graph.microsoft.com/v1.0/users/" . $id;
-        $options = [];
-        $params = [
-            'headers'   =>  [
-                'Accept'        => 'application/json',
-                'Authorization' => 'Bearer ' . $token, 
-             ],
-        ];
-
-        $response = $this->guzzle($verb, $url, $options, $params); */
-
         return $response;
-    }
+    } */
 
-    public function getUsersByUsername($username, $token = null)
+/*     public function getUsersByUsername($username, $token = null)
     {
         if(!$token)
         {
@@ -100,9 +87,9 @@ class AzureApp extends Azure
         $response = $this->guzzle($guzzleparams);
 
         return $response['value'];
-    }
+    } */
 
-    public function getUserGroupsById($id, $token = null)
+/*     public function getUserGroupsById($id, $token = null)
     {
         if(!$token)
         {
@@ -130,7 +117,7 @@ class AzureApp extends Azure
             $return = array_merge($return, $response['value']);            
         }
         return $return;
-    }
+    } */
 
     public function unpackJwt($jwt)
     {
@@ -195,7 +182,7 @@ class AzureApp extends Azure
         {
             throw new \Exception('Token is not valid for this application! (aud)');
         }
-
+        /*
         $date = new \DateTime();
         $now = $date->getTimestamp();
 
@@ -209,7 +196,8 @@ class AzureApp extends Azure
         {
             throw new \Exception('This token is expired! (exp)');
         }
-        return true;
+        /**/
+        return $validated;
     }
 
 }

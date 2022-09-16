@@ -7,7 +7,6 @@ use Ohtarr\Azure\Tenant;
 
 class Azure
 {
-
     public static function guzzle(array $guzzleparams)
     {
         $options = [];
