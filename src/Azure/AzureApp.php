@@ -175,6 +175,11 @@ class AzureApp extends Azure
 
     public function validateUserToken($token)
     {
+        if(!$token)
+        {
+            throw new \Exception('Token not found!');
+        }
+
         $validated = $this->validateRSAToken($token);
 
         // Token AUD must match our client id.
