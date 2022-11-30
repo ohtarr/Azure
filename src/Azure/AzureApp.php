@@ -19,7 +19,7 @@ class AzureApp extends Azure
         $this->client_secret = $client_secret;
     }
 
-    public function getToken($scope = 'https://graph.microsoft.com/.default')
+    public function getRawToken($scope = 'https://graph.microsoft.com/.default')
     {
         $guzzleparams = [
             'verb'      =>  'post',
@@ -38,10 +38,16 @@ class AzureApp extends Azure
             ]
         ];
         $response = $this->guzzle($guzzleparams);
+        return $response;
+    }
+
+    public function getToken($scope = 'https://graph.microsoft.com/.default')
+    {
+        $response = $this->getRawToken($scope);
         return $response['access_token'];
     }
 
- /*    public function getUserById($id, $token = null)
+/*     public function getUserById($id, $token = null)
     {
         if(!$token)
         {
